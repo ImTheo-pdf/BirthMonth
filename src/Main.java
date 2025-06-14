@@ -1,15 +1,42 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // PSEUDO CODE
+        // Create Scanner
+        // int month
+        // String trash
+        // Output: "What is your birthmonth(1-12)"
+        //if valid input
+        //  if month is between 1 and 12
+        //      Output "Your birthmonth is" + x
+        //  else
+        //      Output "You entered an incorrect month values" + x
+        //  else
+        //      Output "Invalid Input: " + Trash
+        // CODE
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        Scanner in = new Scanner(System.in);
+        int month;
+        String trash = "";
+
+        System.out.print("Enter you birth month (1-12): ");
+
+        if(in.hasNextInt()){
+            month = in.nextInt();
+            in.nextLine();
+
+            if (month >= 1 && month <= 12){
+                System.out.println("Your birth month is: " + month);
+            }
+            else{
+                System.out.println("You enter an incorrect month value: " + month);
+            }
         }
+        else{
+            trash = in.nextLine();
+            System.out.println("Invalid input: " + trash);
+            System.out.println("Enter values (1-12)");
+        }
+
     }
 }
